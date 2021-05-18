@@ -26,7 +26,6 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Contentful starter',
-    siteUrl: `https://github.io.work-space.com`,
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
