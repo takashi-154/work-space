@@ -26,8 +26,8 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Contentful starter',
-    siteUrl: `https://takashi-154.github.io/work-space/`,
   },
+  pathPrefix: '/work-space',
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
