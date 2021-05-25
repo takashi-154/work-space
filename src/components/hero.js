@@ -1,19 +1,28 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
-import styles from './hero.module.css'
-
-export default ({ data }) => (
-  <div className={styles.hero}>
-    <Img
-      className={styles.heroImage}
-      alt={data.name}
-      fluid={data.heroImage.fluid}
-    />
-    <div className={styles.heroDetails}>
-      <h3 className={styles.heroHeadline}>{data.name}</h3>
-      <p className={styles.heroTitle}>{data.title}</p>
-      <p>{data.shortBio.shortBio}</p>
+export default () => (
+  <section className="hero is-success is-halfheight">
+    <div className="hero-body">
+      <div>
+        <p className="title py-3">
+          <Link to="/">わーくすぺーす（仮）</Link>
+        </p>
+        <p className="subtitle">
+          天体撮影、キャンプ、ソフト開発 etc…
+        </p>
+      </div>
     </div>
-  </div>
+    <div className="hero-foot">
+      <nav className="tabs is-centered is-boxed is-fullwidth">
+        <ul>
+          <li><a>天体撮影</a></li>
+          <li><a>キャンプ</a></li>
+          <li><a>ソフト開発</a></li>
+          <li><a>その他</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
 )

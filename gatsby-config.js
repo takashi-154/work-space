@@ -25,7 +25,8 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    author: 'Daisuke Takaichi',
+    title: 'わーくすぺーす（仮）',
   },
   pathPrefix: '/work-space',
   plugins: [
@@ -37,5 +38,6 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
+    `gatsby-plugin-sass`,
   ],
 }
