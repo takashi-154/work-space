@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -25,12 +27,19 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    author: 'Daisuke Takaichi',
-    title: 'わーくすぺーす（仮）',
+    author: 'takashi-154',
+    title: 'わーくすぺーす',
   },
   pathPrefix: '/work-space',
   plugins: [
     'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',

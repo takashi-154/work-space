@@ -13,15 +13,15 @@ const RootIndex = props => {
 
   return (
     <Layout location={props.location}>
-      <div className="has-background-white">
+      <div className="">
         <Helmet title={siteTitle} />
         <Hero />
         <div className="container is-fluid py-6">
           <h1 className="notification title is-4">Recent articles</h1>
-          <ul className="columns">
+          <ul className="columns is-multiline">
             {posts.map(({ node }) => {
               return (
-                <li className="column" key={node.slug}>
+                <li className="column is-one-third-desktop is-half-tablet is-full-mobile" key={node.slug}>
                   <ArticlePreview article={node} />
                 </li>
               )

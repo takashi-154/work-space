@@ -11,7 +11,7 @@ const BlogPostTemplate = props => {
 
   return (
     <Layout location={props.location}>
-      <div className="has-background-white">
+      <div className="">
         <Helmet title={`${post.title} | ${siteTitle}`} />
         <div>
           <Img

@@ -5,7 +5,7 @@ export default () => {
   const [isActive, setisActive] = useState(false);
 
   return(
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-black" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a
           onClick={() => {

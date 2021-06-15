@@ -1,16 +1,35 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
-export default () => (
-  <section className="hero is-success is-halfheight">
+import BackgroundImage from 'gatsby-background-image'
+
+export default () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        desktop: file(relativePath: { eq: "hero.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+
+  const imageData = data.desktop.childImageSharp.fluid
+
+  return(
+    <BackgroundImage className="hero is-halfheight" fluid={imageData}>
     <div className="hero-body">
       <div>
         <p className="title py-3">
-          <Link to="/">わーくすぺーす（仮）</Link>
+          わーくすぺーす
         </p>
-        <p className="subtitle">
-          天体撮影、キャンプ、ソフト開発 etc…
+        <p className="subtitle has-text-white">
+          天体撮影、キャンプ、ソフト開発 etc… いろんなことをゆる～くやっていきます。
         </p>
       </div>
     </div>
@@ -24,5 +43,7 @@ export default () => (
         </ul>
       </nav>
     </div>
-  </section>
-)
+  </BackgroundImage>
+  )
+
+}

@@ -1,20 +1,20 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
+  "name": "work-space",
+  "description": "Blog work-space",
   "version": "1.0.0",
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
-  },
+  "author": "takashi-154",
   "dependencies": {
     "@babel/core": "^7.4.5",
     "bulma": "^0.9.2",
+    "bulmaswatch": "^0.8.1",
     "core-js": "^2.6.5",
+    "gatsby-background-image": "^1.5.3",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sass": "^4.5.0",
     "gatsby-plugin-sharp": "^2.5.6",
     "gatsby-source-contentful": "^2.2.9",
+    "gatsby-source-filesystem": "^3.7.1",
     "gatsby-transformer-remark": "^2.7.3",
     "gatsby-transformer-sharp": "^2.4.6",
     "lodash": "^4.17.15",
@@ -41,7 +41,7 @@
   "engines": {
     "node": ">=10.13.0"
   },
-  "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
+  "homepage": "https://takashi-154.github.io/work-space/",
   "keywords": [
     "gatsby",
     "contentful"
@@ -50,7 +50,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
+    "url": "git+https://github.com/takashi-154/work-space.git"
   },
   "scripts": {
     "dev": "npm run develop",

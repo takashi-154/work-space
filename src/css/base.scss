@@ -1,0 +1,18 @@
+@charset "utf-8";
+@import "~bulma/sass/utilities/_all";
+
+@import "~bulmaswatch/darkly/_variables.scss";
+@import "~bulma";
+@import "~bulmaswatch/darkly/_overrides.scss";
+
+@font-face {
+    font-family: "Avenir";
+    font-weight: 400;
+    font-style: normal;
+    src: url("/avenir-400.woff2") format("woff2");
+    font-display: swap;
+  }
+  
+  body {
+    font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  }
