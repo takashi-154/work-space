@@ -11,7 +11,7 @@ export default () => {
         desktop: file(relativePath: { eq: "hero.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -22,7 +22,7 @@ export default () => {
   const imageData = data.desktop.childImageSharp.fluid
 
   return(
-    <BackgroundImage className="hero is-halfheight" fluid={imageData}>
+    <BackgroundImage Tag="section" className="hero is-halfheight" fluid={imageData}>
     <div className="hero-body">
       <div>
         <p className="title py-3">
