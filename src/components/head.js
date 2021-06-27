@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Head = ({ title, description, lang, meta }) => {
+const Head = ({ title, description, image, lang, meta }) => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -22,10 +22,12 @@ const Head = ({ title, description, lang, meta }) => {
             lang,
         }}
         title={`${title} | ${data.site.siteMetadata.title}`}
+        description={`${description} | ${data.site.siteMetadata.description}`}
+        image={`${image}`}
         meta={[
             {
             name: `description`,
-            content: `${data.site.siteMetadata.description}`,
+            content: description,
             },
             {
             name: `twitter:card`,
@@ -45,7 +47,7 @@ const Head = ({ title, description, lang, meta }) => {
             },
             {
             property: `og:description`,
-            content: `${data.site.siteMetadata.description}`,
+            content: description,
             },
             {
             property: `og:type`,
@@ -61,7 +63,7 @@ const Head = ({ title, description, lang, meta }) => {
             },
             {
             name: `twitter:description`,
-            content: `${data.site.siteMetadata.description}`,
+            content: description,
             },
             {
             property: `og:type`,

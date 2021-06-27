@@ -9,11 +9,16 @@ import Head from '../components/head'
 const BlogPostTemplate = props => {
   const post = props.data.contentfulBlogPost
   const siteTitle = props.data.site.siteMetadata.title
+  const siteDesc = props.data.site.siteMetadata.description
 
   return (
     <Layout location={props.location}>
       <div className="">
-        <Head title={`${post.title} | ${siteTitle}`} />
+        <Head 
+          title={`${post.title} | ${siteTitle}`} 
+          description={`${post.description} | ${siteDesc}`} 
+          image={post.heroImage.fluid}
+        />
         <div>
           <Img
             alt={post.title}
@@ -43,6 +48,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     contentfulBlogPost(slug: { eq: $slug }) {
