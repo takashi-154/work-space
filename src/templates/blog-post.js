@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import Head from '../components/head'
 
 const BlogPostTemplate = props => {
   const post = props.data.contentfulBlogPost
@@ -12,7 +13,7 @@ const BlogPostTemplate = props => {
   return (
     <Layout location={props.location}>
       <div className="">
-        <Helmet title={`${post.title} | ${siteTitle}`} />
+        <Head title={`${post.title} | ${siteTitle}`} />
         <div>
           <Img
             alt={post.title}
