@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
+Sitemap: https://takashi-154.github.io/work-space/sitemap/sitemap-0.xml
+Host: https://takashi-154.github.io
