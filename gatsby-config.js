@@ -29,6 +29,8 @@ module.exports = {
   siteMetadata: {
     author: 'takashi-154',
     title: 'わーくすぺーす',
+    description: `天体撮影、キャンプ、ソフト開発 etc… いろんなことをゆる～くやっていきます。`,
+    siteUrl: `https://takashi-154.github.io/work-space/`,
   },
   pathPrefix: '/work-space',
   plugins: [
@@ -48,5 +50,15 @@ module.exports = {
       options: contentfulConfig,
     },
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: ["UA-200614285-1"],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
   ],
 }
