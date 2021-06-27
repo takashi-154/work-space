@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-export default ({ article }) => (
-  <div className="card">
+export default ({ article }) => {
+
+  const image = getImage(article.heroImage)
+
+  return(
+    <div className="card">
     <Link to={`/blog/${article.slug}`}>
-      <Img className="card-image" alt="" fluid={article.heroImage.fluid} />
+      <GatsbyImage className="card-image" alt="" image={image} />
     </Link>
     <div className="card-content">
       
@@ -36,4 +40,5 @@ export default ({ article }) => (
 
     </div>
   </div>
-)
+  )
+}

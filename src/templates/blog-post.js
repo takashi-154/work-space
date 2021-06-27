@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Head from '../components/head'
 
@@ -10,6 +10,8 @@ const BlogPostTemplate = props => {
   const post = props.data.contentfulBlogPost
   const siteTitle = props.data.site.siteMetadata.title
   const siteDesc = props.data.site.siteMetadata.description
+
+  const image = getImage(post.heroImage)
 
   return (
     <Layout location={props.location}>
@@ -19,9 +21,9 @@ const BlogPostTemplate = props => {
           description={`${post.description.description}`} 
         />
         <div>
-          <Img
+          <GatsbyImage
             alt={post.title}
-            fluid={post.heroImage.fluid}
+            fluid={image}
           />
         </div>
         <div className="container is-fluid py-6">
@@ -57,9 +59,7 @@ export const pageQuery = graphql`
       }
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_tracedSVG
-        }
+        gatsbyImageData(width: 1180, layout: FULL_WIDTH)
       }
       body {
         childMarkdownRemark {
