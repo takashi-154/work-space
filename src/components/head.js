@@ -38,7 +38,7 @@ const Head = ({ title, description, lang, meta }) => {
             },
             {
             property: `og:image`,
-            content: `${data.site.siteMetadata.siteUrl}/images/icon.png`,
+            content: `/images/icon.png`,
             },
             {
             property: `og:title`,
@@ -54,7 +54,7 @@ const Head = ({ title, description, lang, meta }) => {
             },
             {
             name: `thumbnail`,
-            content: `${data.site.siteMetadata.siteUrl}/images/icon.png`,
+            content: `/images/icon.png`,
             },
             {
             name: `twitter:title`,

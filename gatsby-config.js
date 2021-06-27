@@ -52,6 +52,20 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://takashi-154.github.io/work-space/',
+        sitemap: 'https://takashi-154.github.io/work-space/sitemap/sitemap-0.xml',
+      }
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://takashi-154.github.io/work-space/`,
+        stripQueryString: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: ["UA-200614285-1"],
