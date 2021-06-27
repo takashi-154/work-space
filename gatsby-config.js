@@ -34,7 +34,12 @@ module.exports = {
   },
   pathPrefix: '/work-space',
   plugins: [
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [`gatsby-remark-autolink-headers`],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,7 +55,6 @@ module.exports = {
       options: contentfulConfig,
     },
     `gatsby-plugin-sass`,
-    `gatsby-remark-autolink-headers`,
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-robots-txt',
