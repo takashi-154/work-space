@@ -16,8 +16,7 @@ const BlogPostTemplate = props => {
       <div className="">
         <Head 
           title={`${post.title} | ${siteTitle}`} 
-          description={`${post.description} | ${siteDesc}`} 
-          image={post.heroImage.fluid}
+          description={`${post.description.description}`} 
         />
         <div>
           <Img
@@ -53,6 +52,9 @@ export const pageQuery = graphql`
     }
     contentfulBlogPost(slug: { eq: $slug }) {
       title
+      description {
+        description
+      }
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fluid(maxWidth: 1180, background: "rgb:000000") {

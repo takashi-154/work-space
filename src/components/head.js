@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Head = ({ title, description, image, lang, meta }) => {
+const Head = ({ title, description, lang, meta }) => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -21,9 +21,8 @@ const Head = ({ title, description, image, lang, meta }) => {
         htmlAttributes={{
             lang,
         }}
-        title={`${title} | ${data.site.siteMetadata.title}`}
-        description={`${description} | ${data.site.siteMetadata.description}`}
-        image={`${image}`}
+        title={`${title}`}
+        description={`${description}`}
         meta={[
             {
             name: `description`,
@@ -39,7 +38,7 @@ const Head = ({ title, description, image, lang, meta }) => {
             },
             {
             property: `og:image`,
-            content: `${data.site.siteMetadata.siteUrl}/images/tube.png`,
+            content: `${data.site.siteMetadata.siteUrl}/images/icon.png`,
             },
             {
             property: `og:title`,
@@ -55,7 +54,7 @@ const Head = ({ title, description, image, lang, meta }) => {
             },
             {
             name: `thumbnail`,
-            content: `${data.site.siteMetadata.siteUrl}/images/tube.png`,
+            content: `${data.site.siteMetadata.siteUrl}/images/icon.png`,
             },
             {
             name: `twitter:title`,
@@ -77,7 +76,8 @@ const Head = ({ title, description, image, lang, meta }) => {
 Head.defaultProps = {
     lang: `ja`,
     meta: [],
-    description: ``,
+    title: `${data.site.siteMetadata.title}`,
+    description: `${data.site.siteMetadata.description}`,
 }
 
 export default Head;
