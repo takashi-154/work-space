@@ -23,7 +23,7 @@ const BlogPostTemplate = props => {
         <div>
           <GatsbyImage
             alt={post.title}
-            fluid={image}
+            image={image}
           />
         </div>
         <div className="container is-fluid py-6">
