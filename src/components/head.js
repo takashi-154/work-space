@@ -76,8 +76,8 @@ const Head = ({ title, description, lang, meta }) => {
 Head.defaultProps = {
     lang: `ja`,
     meta: [],
-    title: `${data.site.siteMetadata.title}`,
-    description: `${data.site.siteMetadata.description}`,
+    title: `わーくすぺーす`,
+    description: `天体撮影、キャンプ、ソフト開発 etc… いろんなことをゆる～くやっていきます。`,
 }
 
 export default Head;
