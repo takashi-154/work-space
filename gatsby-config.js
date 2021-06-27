@@ -50,6 +50,7 @@ module.exports = {
       options: contentfulConfig,
     },
     `gatsby-plugin-sass`,
+    `gatsby-remark-autolink-headers`,
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-robots-txt',
