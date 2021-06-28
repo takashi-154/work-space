@@ -1,15 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Head from '../components/head'
+import Share from '../components/share'
 
 const BlogPostTemplate = props => {
   const post = props.data.contentfulBlogPost
   const siteTitle = props.data.site.siteMetadata.title
-  const siteDesc = props.data.site.siteMetadata.description
+  const siteDescription = props.data.site.siteMetadata.description
+  const siteUrl = props.data.site.siteMetadata.siteUrl
 
   const image = getImage(post.heroImage)
 
@@ -18,7 +19,8 @@ const BlogPostTemplate = props => {
       <div className="">
         <Head 
           title={`${post.title} | ${siteTitle}`} 
-          description={`${post.description.description}`} 
+          description={`${post.description.description}` || siteDescription} 
+          slug={`/blog/${post.slug}`}
         />
         <div>
           <GatsbyImage
@@ -36,6 +38,7 @@ const BlogPostTemplate = props => {
               }}
             />
           </div>
+          <Share title={`${post.title} | ${siteTitle}`} articleUrl={`${siteUrl}/blog/${post.slug}`} />
         </div>
       </div>
     </Layout>
@@ -50,6 +53,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        siteUrl
       }
     }
     contentfulBlogPost(slug: { eq: $slug }) {
@@ -57,6 +61,7 @@ export const pageQuery = graphql`
       description {
         description
       }
+      slug
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         gatsbyImageData(width: 1180, layout: FULL_WIDTH)

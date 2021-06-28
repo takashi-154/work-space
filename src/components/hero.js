@@ -35,10 +35,10 @@ export default () => {
       <div className="hero-foot">
         <nav className="tabs is-centered is-boxed is-fullwidth">
           <ul>
-            <li><a>天体撮影</a></li>
-            <li><a>キャンプ</a></li>
-            <li><a>ソフト開発</a></li>
-            <li><a>その他</a></li>
+            <li><Link to="/astrograph/">天体撮影</Link></li>
+            <li><Link to="/camp/">キャンプ</Link></li>
+            <li><Link to="/software/">ソフト開発</Link></li>
+            <li><Link to="/others/">その他</Link></li>
           </ul>
         </nav>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { Link } from 'gatsby'
 import Container from './container'
 import Navigation from './navigation'
+import Footer from './footer'
 import '../css/base.scss'
 
 const Template = ({ location, children }) => {
@@ -29,6 +29,7 @@ const Template = ({ location, children }) => {
       <Container>
         <Navigation />
         {children}
+        <Footer />
       </Container>
     )
 }

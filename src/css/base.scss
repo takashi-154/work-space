@@ -5,6 +5,16 @@
 @import "~bulma";
 @import "~bulmaswatch/darkly/_overrides.scss";
 
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "~bulma-social/css/single/facebook/facebook.min.css";
+@import "~bulma-social/css/single/flickr/flickr.min.css";
+@import "~bulma-social/css/single/github/github.min.css";
+@import "~bulma-social/css/single/gitlab/gitlab.min.css";
+@import "~bulma-social/css/single/instagram/instagram.min.css";
+@import "~bulma-social/css/single/linkedin/linkedin.min.css";
+@import "~bulma-social/css/single/twitter/twitter.min.css";
+@import "~bulma-social/css/single/youtube/youtube.min.css";
+
 @font-face {
     font-family: "Avenir";
     font-weight: 400;

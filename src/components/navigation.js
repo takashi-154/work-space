@@ -5,7 +5,7 @@ export default () => {
   const [isActive, setisActive] = useState(false);
 
   return(
-    <nav className="navbar is-black" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a
           onClick={() => {
@@ -27,30 +27,66 @@ export default () => {
         <div className="navbar-start">
           <Link className="navbar-item" to="/">Home</Link>
 
-          <Link className="navbar-item" to="/blog/">Blog</Link>
+          <Link className="navbar-item" to="/blog/">記事一覧</Link>
 
           <div className="navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">
-              More
+              タグ一覧
             </a>
 
             <div className="navbar-dropdown">
-              <a className="navbar-item">
-                About
-              </a>
-              <a className="navbar-item">
-                Jobs
-              </a>
-              <a className="navbar-item">
-                Contact
-              </a>
+              <Link className="navbar-item" to="/astrograph/">
+                天体撮影
+              </Link>
+              <Link className="navbar-item" to="/camp/">
+                キャンプ
+              </Link>
+              <Link className="navbar-item" to="/software/">
+                ソフト開発
+              </Link>
               <hr className="navbar-divider" />
-              <a className="navbar-item">
-                Report an issue
-              </a>
+              <Link className="navbar-item" to="/others/">
+                その他
+              </Link>
             </div>
           </div>
         </div>
+
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="field is-grouped">
+              <p className="control">
+                <Link className="button social-icon is-twitter" target="_blank" to="https://twitter.com/Mazic_tell_Arts">
+                  <span className="icon is-medium">
+                    <i className="fab fa-twitter fa-lg"></i>
+                  </span>
+                </Link>
+              </p>
+              <p className="control">
+                <Link className="button social-icon is-github" target="_blank" to="https://github.com/takashi-154">
+                  <span className="icon is-medium">
+                    <i className="fab fa-github fa-lg"></i>
+                  </span>
+                </Link>
+              </p>
+              <p className="control">
+                <Link className="button social-icon is-facebook" target="_blank" to="https://www.facebook.com/profile.php?id=100069240847936">
+                  <span className="icon is-medium">
+                    <i className="fab fa-facebook fa-lg"></i>
+                  </span>
+                </Link>
+              </p>
+              <p className="control">
+                <Link className="button social-icon is-instagram" target="_blank" to="https://www.instagram.com/mazic_arts/">
+                  <span className="icon is-medium">
+                    <i className="fab fa-instagram fa-lg"></i>
+                  </span>
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </nav>
   )

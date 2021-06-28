@@ -31,6 +31,8 @@ module.exports = {
     title: 'わーくすぺーす',
     description: `天体撮影、キャンプ、ソフト開発 etc… いろんなことをゆる～くやっていきます。`,
     siteUrl: `https://takashi-154.github.io/work-space/`,
+    image: `/icon.png`,
+    twitterUsername: `@Mazic_tell_Arts`, 
   },
   pathPrefix: '/work-space',
   plugins: [

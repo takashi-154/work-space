@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Head = ({ title, description, lang, meta }) => {
+const Head = ({ title, description, slug, lang, meta }) => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -11,22 +11,59 @@ const Head = ({ title, description, lang, meta }) => {
                     title
                     siteUrl
                     description
+                    image
+                    twitterUsername
                 }
             }
         }
     `)
+
+    const seo = {
+        title: title || data.site.siteMetadata.title,
+        description: description || data.site.siteMetadata.description,
+        image: `${data.site.siteMetadata.siteUrl}${data.site.siteMetadata.image}`,
+        url: `${data.site.siteMetadata.siteUrl}${slug}`,
+    }
 
     return (
         <Helmet
         htmlAttributes={{
             lang,
         }}
-        title={`${title}`}
-        description={`${description}`}
+        title={seo.title}
+        description={seo.description}
         meta={[
             {
             name: `description`,
-            content: description,
+            content: seo.description,
+            },
+            {
+            name: `image`,
+            content: seo.image,
+            },
+            {
+            name: `thumbnail`,
+            content: seo.image,
+            },
+            {
+            property: `og:url`,
+            content: seo.url,
+            },
+            {
+            property: `og:type`,
+            content: `website`,
+            },
+            {
+            property: `og:title`,
+            content: seo.title,
+            },
+            {
+            property: `og:description`,
+            content: seo.description,
+            },
+            {
+            property: `og:image`,
+            content: seo.image,
             },
             {
             name: `twitter:card`,
@@ -34,39 +71,19 @@ const Head = ({ title, description, lang, meta }) => {
             },
             {
             name: `twitter:creator`,
-            content: data.site.siteMetadata.author,
-            },
-            {
-            property: `og:image`,
-            content: `/images/icon.png`,
-            },
-            {
-            property: `og:title`,
-            content: title,
-            },
-            {
-            property: `og:description`,
-            content: description,
-            },
-            {
-            property: `og:type`,
-            content: `website`,
-            },
-            {
-            name: `thumbnail`,
-            content: `/images/icon.png`,
+            content: data.site.siteMetadata.twitterUsername,
             },
             {
             name: `twitter:title`,
-            content: title,
+            content: seo.title,
             },
             {
             name: `twitter:description`,
-            content: description,
+            content: seo.description,
             },
             {
-            property: `og:type`,
-            content: `website`,
+            property: `twitter:image`,
+            content: seo.image,
             },
         ]}
         />
@@ -78,6 +95,7 @@ Head.defaultProps = {
     meta: [],
     title: `わーくすぺーす`,
     description: `天体撮影、キャンプ、ソフト開発 etc… いろんなことをゆる～くやっていきます。`,
+    slug: ``,
 }
 
 export default Head;
