@@ -10,10 +10,9 @@ const RootIndex = props => {
   const siteTitle = props.data.site.siteMetadata.title
   const siteDescription = props.data.site.siteMetadata.description
   const posts = props.data.allContentfulBlogPost.edges
-  const [author] = props.data.allContentfulPerson.edges
 
   return (
-    <Layout location={props.location}>
+    <Layout>
       <div className="">
         <Head 
           title={siteTitle} 
@@ -67,22 +66,6 @@ export const pageQuery = graphql`
             childMarkdownRemark {
               html
             }
-          }
-        }
-      }
-    }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
-    ) {
-      edges {
-        node {
-          name
-          shortBio {
-            shortBio
-          }
-          title
-          heroImage: image {
-            gatsbyImageData(width: 1180, height: 480, layout: FULL_WIDTH)
           }
         }
       }

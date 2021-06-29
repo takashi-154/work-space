@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Head = ({ title, description, slug, lang, meta }) => {
+const Head = ({ title, description, slug, image, lang, meta }) => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -21,7 +21,8 @@ const Head = ({ title, description, slug, lang, meta }) => {
     const seo = {
         title: title || data.site.siteMetadata.title,
         description: description || data.site.siteMetadata.description,
-        image: `${data.site.siteMetadata.siteUrl}${data.site.siteMetadata.image}`,
+        //image: `${data.site.siteMetadata.siteUrl}${data.site.siteMetadata.image}`,
+        image: image,
         url: `${data.site.siteMetadata.siteUrl}${slug}`,
     }
 
@@ -96,6 +97,7 @@ Head.defaultProps = {
     title: `わーくすぺーす`,
     description: `天体撮影、キャンプ、ソフト開発 etc… いろんなことをゆる～くやっていきます。`,
     slug: ``,
+    image: ``,
 }
 
 export default Head;

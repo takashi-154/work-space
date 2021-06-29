@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Head from '../components/head'
 import Share from '../components/share'
+import Pagination from '../components/pagination'
 
 const BlogPostTemplate = props => {
   const post = props.data.contentfulBlogPost
@@ -12,7 +13,13 @@ const BlogPostTemplate = props => {
   const siteDescription = props.data.site.siteMetadata.description
   const siteUrl = props.data.site.siteMetadata.siteUrl
 
+  const edges = props.data.allContentfulBlogPost.edges
+  const posts = edges.find((e) => e.node.id === post.id)
+  const nextPost = posts.previous
+  const previousPost = posts.next
+
   const image = getImage(post.heroImage)
+
 
   return (
     <Layout location={props.location}>
@@ -21,6 +28,7 @@ const BlogPostTemplate = props => {
           title={`${post.title} | ${siteTitle}`} 
           description={`${post.description.description}` || siteDescription} 
           slug={`/blog/${post.slug}`}
+          image={image.images.fallback.src}
         />
         <div>
           <GatsbyImage
@@ -38,8 +46,9 @@ const BlogPostTemplate = props => {
               }}
             />
           </div>
-          <Share title={`${post.title} | ${siteTitle}`} articleUrl={`${siteUrl}/blog/${post.slug}`} />
         </div>
+        <Share title={`${post.title} | ${siteTitle}`} articleUrl={`${siteUrl}/blog/${post.slug}`} />
+        <Pagination next={nextPost} previous={previousPost} />
       </div>
     </Layout>
   )
@@ -57,6 +66,7 @@ export const pageQuery = graphql`
       }
     }
     contentfulBlogPost(slug: { eq: $slug }) {
+      id
       title
       description {
         description
@@ -69,6 +79,44 @@ export const pageQuery = graphql`
       body {
         childMarkdownRemark {
           html
+        }
+      }
+    }
+    allContentfulBlogPost(
+      sort: { fields: [publishDate], order: DESC }
+      ) {
+      edges {
+        next {
+          title
+          slug
+          publishDate(formatString: "MMMM Do, YYYY")
+          tags
+          heroImage {
+            gatsbyImageData(width: 350, height: 196, layout: FULL_WIDTH)
+          }
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        node {
+          id
+          slug
+        }
+        previous {
+          title
+          slug
+          publishDate(formatString: "MMMM Do, YYYY")
+          tags
+          heroImage {
+            gatsbyImageData(width: 350, height: 196, layout: FULL_WIDTH)
+          }
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
     }
