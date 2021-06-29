@@ -28,7 +28,6 @@ const BlogPostTemplate = props => {
           title={`${post.title} | ${siteTitle}`} 
           description={`${post.description.description}` || siteDescription} 
           slug={`/blog/${post.slug}`}
-          image={image.images.fallback.src}
         />
         <div>
           <GatsbyImage
