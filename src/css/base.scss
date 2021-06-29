@@ -14,16 +14,8 @@
 @import "~bulma-social/css/single/linkedin/linkedin.min.css";
 @import "~bulma-social/css/single/twitter/twitter.min.css";
 @import "~bulma-social/css/single/youtube/youtube.min.css";
-
-@font-face {
-    font-family: "Avenir";
-    font-weight: 400;
-    font-style: normal;
-    src: url("/avenir-400.woff2") format("woff2");
-    font-display: swap;
-  }
   
-  body {
-    font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
-    padding-top: 3.75rem;
-  }
+body {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  padding-top: 3.75rem;
+}

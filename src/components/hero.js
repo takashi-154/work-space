@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import BackgroundImage from 'gatsby-background-image'
 
-export default () => {
+const Hero = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -46,3 +46,5 @@ export default () => {
   )
 
 }
+
+export default Hero;

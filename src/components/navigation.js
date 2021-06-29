@@ -30,9 +30,9 @@ export default () => {
           <Link className="navbar-item" to="/blog/">記事一覧</Link>
 
           <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link">
+            <span className="navbar-link">
               タグ一覧
-            </a>
+            </span>
 
             <div className="navbar-dropdown">
               <Link className="navbar-item" to="/astrograph/">
@@ -56,28 +56,28 @@ export default () => {
           <div className="navbar-item">
             <div className="field is-grouped">
               <p className="control">
-                <Link className="button social-icon is-twitter" target="_blank" to="https://twitter.com/Mazic_tell_Arts">
+                <Link className="button social-icon is-twitter" target="_blank" to="https://twitter.com/Mazic_tell_Arts" rel="noreferrer">
                   <span className="icon is-medium">
                     <i className="fab fa-twitter fa-lg"></i>
                   </span>
                 </Link>
               </p>
               <p className="control">
-                <Link className="button social-icon is-github" target="_blank" to="https://github.com/takashi-154">
+                <Link className="button social-icon is-github" target="_blank" to="https://github.com/takashi-154" rel="noreferrer">
                   <span className="icon is-medium">
                     <i className="fab fa-github fa-lg"></i>
                   </span>
                 </Link>
               </p>
               <p className="control">
-                <Link className="button social-icon is-facebook" target="_blank" to="https://www.facebook.com/profile.php?id=100069240847936">
+                <Link className="button social-icon is-facebook" target="_blank" to="https://www.facebook.com/profile.php?id=100069240847936" rel="noreferrer">
                   <span className="icon is-medium">
                     <i className="fab fa-facebook fa-lg"></i>
                   </span>
                 </Link>
               </p>
               <p className="control">
-                <Link className="button social-icon is-instagram" target="_blank" to="https://www.instagram.com/mazic_arts/">
+                <Link className="button social-icon is-instagram" target="_blank" to="https://www.instagram.com/mazic_arts/" rel="noreferrer">
                   <span className="icon is-medium">
                     <i className="fab fa-instagram fa-lg"></i>
                   </span>

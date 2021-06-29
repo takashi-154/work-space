@@ -8,17 +8,17 @@ export default ({ article }) => {
 
   return(
     <div className="card">
-    <Link to={`/blog/${article.slug}`}>
+    <Link to={`/blog/${article.slug}`} aria-label="記事を見る">
       <GatsbyImage className="card-image" alt="" image={image} />
     </Link>
     <div className="card-content">
       
       <div className="media">
         <div className="media-content">
-          <h3 className="title is-4">
+          <h2 className="title is-4">
             <Link to={`/blog/${article.slug}`}>{article.title}</Link>
-          </h3>
-          <h4 className="subtitle is-6">{article.publishDate}</h4>
+          </h2>
+          <h3 className="subtitle is-6">{article.publishDate}</h3>
         </div>
       </div>
 
