@@ -29,7 +29,7 @@ const BlogPostTemplate = props => {
           description={`${post.description.description}` || siteDescription} 
           slug={`/blog/${post.slug}`}
         />
-        <div>
+        <div className="has-text-centered">
           <GatsbyImage
             alt={post.title}
             image={image}
@@ -38,6 +38,14 @@ const BlogPostTemplate = props => {
         <div className="container is-fluid py-6">
           <h1 className="title is-2">{post.title}</h1>
           <p className="subtitle is-5">{post.publishDate}</p>
+          <div className="tags mb-5">
+          {post.tags &&
+            post.tags.map(tag => (
+              <p className="tag is-info is-light" key={tag}>
+                {tag}
+              </p>
+            ))}
+          </div>
           <div className="content">
             <div 
               dangerouslySetInnerHTML={{
@@ -72,8 +80,9 @@ export const pageQuery = graphql`
       }
       slug
       publishDate(formatString: "MMMM Do, YYYY")
+      tags
       heroImage {
-        gatsbyImageData(width: 1180, layout: FULL_WIDTH)
+        gatsbyImageData(height: 640, layout: CONSTRAINED)
       }
       body {
         childMarkdownRemark {

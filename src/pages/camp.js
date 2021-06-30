@@ -16,11 +16,11 @@ const CampIndex = props => {
       <div className="">
         <Head 
           title={`キャンプ | ${siteTitle}`} 
-          description={`投稿された記事の一覧ページです`}
+          description={`投稿されたキャンプ記事の一覧ページです`}
         />
         <Hero />
         <div className="container is-fluid py-6">
-          <h1 className="notification title is-4">キャンプ記事一覧</h1>
+          <h1 className="notification title is-4">キャンプ 記事一覧</h1>
           <ul className="columns is-multiline">
             {posts.map(({ node }) => {
               return (

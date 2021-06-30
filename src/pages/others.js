@@ -16,11 +16,11 @@ const OthersIndex = props => {
       <div className="">
         <Head 
           title={`その他 | ${siteTitle}`} 
-          description={`投稿された記事の一覧ページです`}
+          description={`投稿されたその他記事の一覧ページです`}
         />
         <Hero />
         <div className="container is-fluid py-6">
-          <h1 className="notification title is-4">その他記事一覧</h1>
+          <h1 className="notification title is-4">その他 記事一覧</h1>
           <ul className="columns is-multiline">
             {posts.map(({ node }) => {
               return (

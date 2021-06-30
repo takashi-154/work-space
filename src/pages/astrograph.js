@@ -15,12 +15,12 @@ const AstrographIndex = props => {
     <Layout location={props.location}>
       <div className="">
         <Head 
-          title={`記事一覧 | ${siteTitle}`} 
-          description={`投稿された記事の一覧ページです`}
+          title={`天体写真 | ${siteTitle}`} 
+          description={`投稿された天体写真記事の一覧ページです`}
         />
         <Hero />
         <div className="container is-fluid py-6">
-          <h1 className="notification title is-4">天体写真記事一覧</h1>
+          <h1 className="notification title is-4">天体写真 記事一覧</h1>
           <ul className="columns is-multiline">
             {posts.map(({ node }) => {
               return (

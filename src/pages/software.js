@@ -16,11 +16,11 @@ const SoftwareIndex = props => {
       <div className="">
         <Head 
           title={`ソフト開発 | ${siteTitle}`} 
-          description={`投稿された記事の一覧ページです`}
+          description={`投稿されたソフト開発記事の一覧ページです`}
         />
         <Hero />
         <div className="container is-fluid py-6">
-          <h1 className="notification title is-4">ソフト開発記事一覧</h1>
+          <h1 className="notification title is-4">ソフト開発 記事一覧</h1>
           <ul className="columns is-multiline">
             {posts.map(({ node }) => {
               return (
