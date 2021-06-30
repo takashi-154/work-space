@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "^3.7.1",
     "gatsby-transformer-remark": "^4.5.0",
     "gatsby-transformer-sharp": "^3.8.0",
+    "gbimage-bridge": "^0.1.4",
     "lodash": "^4.17.15",
     "node-sass": "^6.0.0",
     "react": "^16.13.1",

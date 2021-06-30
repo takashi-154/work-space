@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-
-import BackgroundImage from 'gatsby-background-image'
+import { getImage } from 'gatsby-plugin-image';
+import { BgImage } from 'gbimage-bridge';
 
 const Hero = () => {
   const data = useStaticQuery(
@@ -9,19 +9,17 @@ const Hero = () => {
       query {
         desktop: file(relativePath: { eq: "hero.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(quality: 90, width: 1920, layout: CONSTRAINED)
           }
         }
       }
     `
   )
 
-  const imageData = data.desktop.childImageSharp.fluid
+  const imageData = getImage(data.desktop.childImageSharp)
 
   return(
-    <BackgroundImage Tag="section" className="hero is-halfheight" fluid={imageData}>
+    <BgImage Tag="section" className="hero is-halfheight" image={imageData}>
       <div className="hero-body">
         <div>
           <p className="title py-3">
@@ -42,7 +40,7 @@ const Hero = () => {
           </ul>
         </nav>
       </div>
-    </BackgroundImage>
+    </BgImage>
   )
 
 }

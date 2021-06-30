@@ -48,7 +48,7 @@ export const pageQuery = graphql`
     }
     allContentfulBlogPost(
       sort: { fields: [publishDate], order: DESC }
-      filter: { tags: {nin: ["Astrograph" "Camp" "Software"]} }
+      filter: { tags: {in: "Others"} }
       ) {
       edges {
         node {
