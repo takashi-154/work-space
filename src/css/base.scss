@@ -19,3 +19,7 @@ body {
   font-family: Tahoma, Arial, Helvetica, sans-serif;
   padding-top: 3.75rem;
 }
+
+aside.menu > ul {
+  @extend .menu-list
+}

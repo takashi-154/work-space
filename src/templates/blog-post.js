@@ -47,6 +47,14 @@ const BlogPostTemplate = props => {
               </p>
             ))}
           </div>
+          <div className="message">
+            <div className="message-header">
+              <p>目次</p>
+            </div>
+            <div className="message-body">
+              <aside className="menu" dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.tableOfContents }} />
+            </div>
+          </div>
           <div className="content">
             <div 
               dangerouslySetInnerHTML={{
@@ -88,6 +96,7 @@ export const pageQuery = graphql`
       body {
         childMarkdownRemark {
           html
+          tableOfContents
         }
       }
     }
