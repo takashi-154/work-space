@@ -28,6 +28,7 @@ const BlogPostTemplate = props => {
           title={`${post.title} | ${siteTitle}`} 
           description={`${post.description.description}` || siteDescription} 
           slug={`/blog/${post.slug}`}
+          image={`https:${image.images.fallback.src}`}
         />
         <div className="has-text-centered">
           <GatsbyImage
