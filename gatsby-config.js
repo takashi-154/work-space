@@ -4,7 +4,9 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const googleAnalyticsTrackingID = [process.env.GOOGLE_ANALYTICS_ID]
+const googleAnalyticsTrackingID = [
+  process.env.GOOGLE_ANALYTICS_ID
+]
 
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
