@@ -4,15 +4,14 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const googleAnalyticsTrackingID = process.env.GOOGLE_ANALYTICS_ID
+
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  environment: 'master',
 }
 
-// if you want to use the preview API please define
-// CONTENTFUL_HOST in your environment config
-// the `host` property should map to `preview.contentful.com`
-// https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/spaces/space/get-a-space/console/js
 if (process.env.CONTENTFUL_HOST) {
   contentfulConfig.host = process.env.CONTENTFUL_HOST
 }
@@ -83,7 +82,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
-        trackingIds: ["UA-200614285-1"],
+        trackingIds: googleAnalyticsTrackingID,
         pluginConfig: {
           head: true,
         },

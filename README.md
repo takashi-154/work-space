@@ -1,1 +1,1 @@
-## ブログ仮置き
+# Blog components for work-space.
