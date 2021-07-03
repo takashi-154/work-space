@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   setup:
     docker:
-      - image: circleci/node:13.13.0
+      - image: circleci/node:14
     working_directory: ~/application
     steps:
       - checkout
@@ -13,7 +13,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install npm wee
-          command: npm install
+          command: yarn install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -24,7 +24,7 @@ jobs:
             - ~/application
   build:
     docker:
-      - image: circleci/node:13.13.0
+      - image: circleci/node:14
     working_directory: ~/application
     steps:
       - restore_cache:
@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            npm run build && npm run deploy
+            yarn build && yarn deploy
 workflows:
   version: 2.1
   build:
