@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   setup:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:14.17.1
     working_directory: ~/application
     steps:
       - checkout
@@ -24,7 +24,7 @@ jobs:
             - ~/application
   build:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:14.17.1
     working_directory: ~/application
     steps:
       - restore_cache:
