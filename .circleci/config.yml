@@ -8,7 +8,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "8a:e5:ab:03:05:b5:77:ff:59:d1:d5:e9:de:f2:c7:c9"
+            - "ed:06:24:e7:dd:52:8b:12:44:a5:b6:42:c9:ea:84:a0"
       - run:
           name: Update npm
           command: "sudo npm install -g npm@latest"
@@ -34,9 +34,18 @@ jobs:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
+      - add_ssh_keys:
+          fingerprints:
+            - "ed:06:24:e7:dd:52:8b:12:44:a5:b6:42:c9:ea:84:a0"
+      - run:
+          name: Start ssh-keyscan
+          command: |
+            ssh-keyscan ${HOST_NAME} >> ~/.ssh/known_hosts
       - run:
           name: Deploy
           command: |
+            git config user.email "8767154@gmail.com"
+            git config user.name "takashi-154"
             yarn build && yarn deploy
 workflows:
   version: 2.1
