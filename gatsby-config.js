@@ -5,7 +5,8 @@ require('dotenv').config({
 })
 
 const googleAnalyticsTrackingID = [
-  process.env.GOOGLE_ANALYTICS_ID
+  process.env.GOOGLE_ANALYTICS_ID,
+  process.env.GOOGLE_ANALYTICS_ID2
 ]
 
 const contentfulConfig = {
