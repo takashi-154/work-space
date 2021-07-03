@@ -4,11 +4,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const googleAnalyticsTrackingID = [
-  process.env.GOOGLE_ANALYTICS_ID,
-  process.env.GOOGLE_ANALYTICS_ID2
-]
-
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -85,7 +80,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
-        trackingIds: googleAnalyticsTrackingID,
+        trackingIds: ['G-BMVHSDB5PX'],
         pluginConfig: {
           head: true,
         },
