@@ -30,10 +30,10 @@ jobs:
       - image: cimg/node:14.17.1
     working_directory: ~/application
     steps:
-      - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+      # - restore_cache:
+      #     key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      # - restore_cache:
+      #     key: dependency-cache-{{ checksum "package.json" }}
       - add_ssh_keys:
           fingerprints:
             - "ed:06:24:e7:dd:52:8b:12:44:a5:b6:42:c9:ea:84:a0"
