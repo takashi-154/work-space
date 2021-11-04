@@ -14,16 +14,16 @@ const RootIndex = props => {
   return (
     <Layout>
       <div className="">
-        <Head 
-          title={siteTitle} 
-          description={siteDescription} 
+        <Head
+          title={siteTitle}
+          description={siteDescription}
         />
         <Hero />
         <div className="container is-fluid py-6">
           <h1 className="notification title is-4">インフォメーション</h1>
           <article className="message mb-6">
             <div className="message-body">
-              現在いろいろ整備中…暫定的に公開です。
+              月に1回。気長に更新していきたい…。
             </div>
           </article>
           <h1 className="notification title is-4">投稿記事一覧</h1>
