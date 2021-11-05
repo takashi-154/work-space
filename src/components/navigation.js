@@ -1,20 +1,22 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTwitter, faFacebook, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export default () => {
   const [isActive, setisActive] = useState(false);
 
-  return(
+  return (
     <nav className="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a
           onClick={() => {
             setisActive(!isActive)
-          }} 
-          role="button" 
-          className={`navbar-burger burger ${isActive ? 'is-active' : ''}`} 
-          aria-label="menu" 
-          aria-expanded="false" 
+          }}
+          role="button"
+          className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
+          aria-label="menu"
+          aria-expanded="false"
           data-target="globalMenu"
         >
           <span aria-hidden="true"></span>
@@ -58,28 +60,28 @@ export default () => {
               <p className="control">
                 <Link className="button social-icon is-twitter" target="_blank" to="https://twitter.com/Mazic_tell_Arts" rel="noreferrer">
                   <span className="icon is-medium">
-                    <i className="fab fa-twitter fa-lg"></i>
+                    <FontAwesomeIcon icon={faTwitter} />
                   </span>
                 </Link>
               </p>
               <p className="control">
                 <Link className="button social-icon is-github" target="_blank" to="https://github.com/takashi-154" rel="noreferrer">
                   <span className="icon is-medium">
-                    <i className="fab fa-github fa-lg"></i>
+                    <FontAwesomeIcon icon={faGithub} />
                   </span>
                 </Link>
               </p>
               <p className="control">
                 <Link className="button social-icon is-facebook" target="_blank" to="https://www.facebook.com/profile.php?id=100069240847936" rel="noreferrer">
                   <span className="icon is-medium">
-                    <i className="fab fa-facebook fa-lg"></i>
+                    <FontAwesomeIcon icon={faFacebook} />
                   </span>
                 </Link>
               </p>
               <p className="control">
                 <Link className="button social-icon is-instagram" target="_blank" to="https://www.instagram.com/mazic_arts/" rel="noreferrer">
                   <span className="icon is-medium">
-                    <i className="fab fa-instagram fa-lg"></i>
+                    <FontAwesomeIcon icon={faInstagram} />
                   </span>
                 </Link>
               </p>
