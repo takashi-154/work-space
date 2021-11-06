@@ -1,26 +1,28 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import { getImage } from 'gatsby-plugin-image';
-import { BgImage } from 'gbimage-bridge';
+import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Hero = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        desktop: file(relativePath: { eq: "hero.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(quality: 90, width: 1920, layout: CONSTRAINED)
-          }
+
+  return (
+    <div className="hero is-halfheight" style={{ display: "grid" }}>
+      <StaticImage
+        style={{
+          gridArea: "1/1",
+        }}
+        alt=""
+        src={
+          "../images/hero.jpg"
         }
-      }
-    `
-  )
+        formats={["auto", "webp", "avif"]}
+      />
 
-  const imageData = getImage(data.desktop.childImageSharp)
-
-  return(
-    <BgImage Tag="section" className="hero is-halfheight" image={imageData}>
-      <div className="hero-body">
+      <div className="hero-body"
+        style={{
+          gridArea: "1/1",
+          position: "relative",
+          display: "grid",
+        }}>
         <div>
           <p className="title py-3">
             わーくすぺーす
@@ -40,7 +42,7 @@ const Hero = () => {
           </ul>
         </nav>
       </div>
-    </BgImage>
+    </div>
   )
 
 }
