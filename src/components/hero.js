@@ -32,7 +32,12 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <div className="hero-foot">
+      <div className="hero-foot"
+        style={{
+          gridArea: "2/1",
+          position: "relative",
+          display: "grid",
+        }}>
         <nav className="tabs is-centered is-boxed is-fullwidth">
           <ul>
             <li><Link to="/astrograph/">天体撮影</Link></li>
