@@ -29,7 +29,7 @@ module.exports = {
     description: `天体撮影、キャンプ、ソフト開発 etc… いろんなことをゆる～くやっていきます。`,
     siteUrl: `https://takashi-154.github.io/work-space/`,
     image: `/icon.png`,
-    twitterUsername: `@Mazic_tell_Arts`, 
+    twitterUsername: `@Mazic_tell_Arts`,
   },
   pathPrefix: '/work-space',
   plugins: [
@@ -38,7 +38,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-autolink-headers`, 
+            resolve: `gatsby-remark-autolink-headers`,
             options: {
               offsetY: `200`,
             }
@@ -63,6 +63,30 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `わーくすぺーす`,
+        short_name: `work-space`,
+        start_url: `/`,
+        background_color: `#1f2424`,
+        theme_color: `#343c3d`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`,
+        icons: [
+          {
+            src: `/src/images/apple-touch-icon.png`,
+            sizes: `180x180`,
+            type: `image/png`,
+          },
+          {
+            src: `/src/images/android-chrome-192×192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

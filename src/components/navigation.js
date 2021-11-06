@@ -9,6 +9,7 @@ export default () => {
   return (
     <nav className="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
+        <Link className="navbar-item" to="/">Home</Link>
         <a
           onClick={() => {
             setisActive(!isActive)
@@ -27,7 +28,6 @@ export default () => {
 
       <div id="globalMenu" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
         <div className="navbar-start">
-          <Link className="navbar-item" to="/">Home</Link>
 
           <Link className="navbar-item" to="/blog/">記事一覧</Link>
 
@@ -56,7 +56,7 @@ export default () => {
 
         <div className="navbar-end">
           <div className="navbar-item">
-            <div className="field is-grouped">
+            <div className="field is-grouped is-justify-content-space-evenly">
               <p className="control">
                 <Link className="button social-icon is-twitter" target="_blank" to="https://twitter.com/Mazic_tell_Arts" rel="noreferrer">
                   <span className="icon is-medium">

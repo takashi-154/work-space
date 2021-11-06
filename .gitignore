@@ -68,3 +68,6 @@ public
 .env*
 !.env.example
 token.txt
+
+# local folder
+local/
